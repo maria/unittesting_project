@@ -9,7 +9,9 @@ VALID_PARTITION = {}
 INVALID_PARTITION = {}
 
 # Boundary values
-BOUNDARY_VALUES = {}
+BOUNDARY_VALUES = {
+    'NULL': [0, 0],
+    'EMPTY': []}
 
 # Category values
 CATEGORY_VALUES = {}

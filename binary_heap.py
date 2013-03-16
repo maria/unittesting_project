@@ -143,7 +143,7 @@ def create_heap(data):
 
     return heap
 
-def extract_from_heap(heap):
+def extract_from(heap):
     """ Extract from a Binary Heap the nodes. """
     print "Extracting Binary Heap: "
 
@@ -163,7 +163,7 @@ def example():
     
     in_data = [45,13,12,16,9,5]
     heap = create_heap(in_data)
-    extract_from_heap(heap)
+    extract_from(heap)
     
 if __name__ == '__main__':
     example()
