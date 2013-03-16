@@ -38,7 +38,7 @@ def new_heap(**params):
     """ Run binary heap algorithm with data from test_data_generator file.
     Data is chosen based on command line input. Default data: [0, 0].
     """
-    data = TEST_DATA[params['DATA_TYPE']][params['VALUE_TYPE']]
+    data = TEST_DATA[params['DATA_TYPE'].upper()][params['VALUE_TYPE'].upper()]
 
     print "Running algorithm with data: "
     print data
