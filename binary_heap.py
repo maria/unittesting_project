@@ -29,23 +29,31 @@ max_priority = MaxPriority()
 
 class BinaryHeap:
     def __init__(self, priority=None):
-        self.priority = priority
-        if self.priority == None:
+        """ Init a Binary Heap, with minimum priority if other isn't set. """
+        if priority == None:
             self.priority = min_priority
+        else:
+            self.priority = priority
+
         self.storage = []
 
     def insert(self, x):
+        """ Insert a new value/node to the heap. """
         self.storage.append(x)
-        self.__sift_up()
+        self.__shift_up()
         
     def extract(self):
+        """ Extract a node from the heap. """
         if self.is_empty():
             return None
+
         result = self.storage[0]
         last = self.storage.pop()
+
         if not self.is_empty():
             self.storage[0] = last
-            self.__sift_down()
+            self.__shift_down()
+
         return result
 
     def get_items(self):
@@ -54,16 +62,17 @@ class BinaryHeap:
     def is_empty(self):
         return len(self.storage) == 0
 
-    def __parent(self, c):
-        if c == 0:
+    def __parent(self, node):
+        """ Return a node parent. """
+        if node == 0:
             return 0
-        return (c - 1 ) / 2
+        return (node - 1 ) / 2
 
-    def __left(self, p):
-        return 2 * p + 1
+    def __left(self, node):
+        return 2 * node + 1
 
-    def __right(self, p):
-        return 2 * p + 2
+    def __right(self, node):
+        return 2 * node + 2
 
     def __better(self, a, b):
         return self.priority.compare(self.storage[a], self.storage[b])
@@ -71,11 +80,12 @@ class BinaryHeap:
     def __swap(self, a, b):
         self.storage[a], self.storage[b] = self.storage[b], self.storage[a]
 
-    def __get_better_child(self, p):
+    def __get_better_child(self, parent):
 
         n = len(self.storage)
-        a = self.__left(p)
-        b = self.__right(p)
+        a = self.__left(parent)
+        b = self.__right(parent)
+
         if a < n and b < n:
             if self.__better(a, b):
                 return a
@@ -84,32 +94,34 @@ class BinaryHeap:
         elif a < n:
             return a
         else:
-            return p
-                
+            return parent
 
-    def __sift_up(self, s=-1):
+    def __shift_up(self, level=-1):
 
-        if s < 0:
-            c = len(self.storage)-1
+        if level < 0:
+            child = len(self.storage)-1
         else:
-            c = s
-        p = self.__parent(c)
+            child = level
 
-        while p < c and self.__better(c, p):
-            self.__swap(c, p)
-            c = p
-            p = self.__parent(c)
-        return c
+        parent = self.__parent(child)
 
-    def __sift_down(self, s=0):
-        p = s
-        c = self.__get_better_child(p)
+        while parent < child and self.__better(child, parent):
+            self.__swap(child, parent)
+            child = parent
+            parent = self.__parent(child)
 
-        while p < c and self.__better(c, p):
-            self.__swap(c, p)
-            p = c
-            c = self.__get_better_child(p)
-        return p
+        return child
+
+    def __shift_down(self, level=0):
+        parent = level
+        child = self.__get_better_child(parent)
+
+        while parent < child and self.__better(child, parent):
+            self.__swap(child, parent)
+            parent = child
+            child = self.__get_better_child(parent)
+
+        return parent
 
 def create_heap(data):
     """ Create a Binary Tree using a list of values. Return the constructed
