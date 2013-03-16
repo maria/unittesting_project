@@ -1,4 +1,5 @@
 import cli.app
+from exceptions import KeyError
 
 import binary_heap as heap
 from test_data_generator import TEST_DATA
@@ -34,19 +35,27 @@ def run_program(**params):
     elif params['ENV'] == 'example':
         heap.example()
 
+    else:
+        print "Sorry, I don't know what you're talking about! "
+
 def new_heap(**params):
     """ Run binary heap algorithm with data from test_data_generator file.
     Data is chosen based on command line input. Default data: [0, 0].
     """
-    data = TEST_DATA[params['DATA_TYPE'].upper()][params['VALUE_TYPE'].upper()]
+    try:
+        data = TEST_DATA[params['DATA_TYPE'].upper()][params['VALUE_TYPE'].upper()]
 
-    print "Running algorithm with data: "
-    print data
+    except KeyError:
+        print "This type of data doesn't exists." 
+
+    else:
+        print "Running algorithm with data: "
+        print data
     
-    # Create a heap.
-    null_heap = heap.create_heap(data)
-    # Extract the heap.
-    heap.extract_from(null_heap)
+        # Create a heap.
+        null_heap = heap.create_heap(data)
+        # Extract the heap.
+        heap.extract_from(null_heap)
 
 if __name__ == '__main__':
     read_from_cli.run()
