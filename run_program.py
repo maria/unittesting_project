@@ -26,9 +26,7 @@ read_from_cli.add_param('--value',
 read_from_cli.add_param('--env', help=ENV_HELP, type=str, default='new')
 
 def run_program(**params):
-    """ Run binary heap algorithm with data from test_data_generator file.
-    Data is chosen based on command line input. Default data: [0, 0].
-    """
+    """ Choose what method to call for binary heap algorithm. """
 
     if params['ENV'] == 'new':
         new_heap(**params)
@@ -37,6 +35,9 @@ def run_program(**params):
         heap.example()
 
 def new_heap(**params):
+    """ Run binary heap algorithm with data from test_data_generator file.
+    Data is chosen based on command line input. Default data: [0, 0].
+    """
     data = TEST_DATA[params['DATA_TYPE']][params['VALUE_TYPE']]
 
     print "Running algorithm with data: "
