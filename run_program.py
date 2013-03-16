@@ -1,8 +1,8 @@
 import cli.app
 from exceptions import KeyError
 
-import binary_heap as heap
-from test_data_generator import TEST_DATA
+import project.binary_heap as heap
+from project.test_data_generator import TEST_DATA
 
 ENV_HELP = ("Choose in what environment to run the program. Options:" +
            "     new = create a new heap and extract heap." + 
