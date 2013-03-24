@@ -1,9 +1,9 @@
 class Triangle
 
-    def initialize(a, b, c)
-        @lat1 = a
-        @lat2 = b
-        @lat3 = c
+    def initialize(array)
+        @lat1 = array[0]
+        @lat2 = array[1]
+        @lat3 = array[2]
     end
 
     def is_triangle?
@@ -21,13 +21,13 @@ class Triangle
 
     def type
         if self.is_equilateral?
-            return "Echilateral"
+            return "Equilateral"
 
         elsif self.is_isosceles?
             return "Isocel"
 
         elsif self.is_scalene?
-            return "Random"
+            return "Scalene"
 
         end
     end
@@ -77,7 +77,3 @@ class Triangle
         return edges
     end
 end
-
-triunghi = Triangle.new(2, 3, 4)
-triunghi1 = Triangle.new(1, 4, 3)
-print triunghi.is_congruent_with?(triunghi1)
