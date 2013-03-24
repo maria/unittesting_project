@@ -1,4 +1,5 @@
 require 'test/unit'
+
 require './triangle'
 require './test_data'
 
