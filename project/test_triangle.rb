@@ -29,4 +29,13 @@ describe Triangle do
             expect(triangle.show).to eq('1, 2, 3')
         end
     end
+
+    describe '#type' do
+        subject(:triangle_scalene) {Triangle.new(VALID_PARTITION['scalene'][0])}
+        subject(:triangle_isosceles) {Triangle.new(VALID_PARTITION['isosceles'][0])}
+        it 'should return triangle type' do
+            expect(triangle_scalene.type).to eq("Scalene")
+            expect(triangle_isosceles.type).to eq("Isosceles")
+        end
+    end
 end
