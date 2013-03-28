@@ -50,7 +50,7 @@ end
         subject(:triangle_isosceles) {@triangle_isosceles}
         subject(:triangle_equi) {@triangle_equi}
 
-        it 'should return true for triangle_equi, otherwhise false' do
+        it 'should return true for equi and isosceles otherwhise false' do
             expect(triangle_scalene.is_isosceles?).to be(false)
             expect(triangle_isosceles.is_isosceles?).to be(true)
             expect(triangle_equi.is_isosceles?).to be(true)
