@@ -16,7 +16,8 @@ class Triangle
     end
 
     def show
-        print @lat1, @lat2, @lat3
+        edges = "#{@lat1}, #{@lat2}, #{@lat3}"
+        return edges
     end
 
     def type
