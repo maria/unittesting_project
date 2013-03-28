@@ -4,15 +4,16 @@
 
 1. Create a software program  
 
-The ```binary_heap.py``` file contains an algorithm to construct/extract a Binary Heap  
-based on a list of values.
+The ```triangle.rb``` file contains an algorithm to create a Triangle instance.  
+The class has several methods to verify a triangle type, etc.
 
 2. Generate test data  
-
 Use   
 * equivalence partitioning,   
 * boundary value analysis,   
-* category partitioning methods to generate data.
+* category partitioning methods to generate data.  
+This data is kept in ```test_data.rb```
+
 
 3. Compute program complexity  
 Using [McCabe formula](http://en.wikipedia.org/wiki/Cyclomatic_complexity) compute the program complexity.
@@ -20,6 +21,6 @@ Using [McCabe formula](http://en.wikipedia.org/wiki/Cyclomatic_complexity) compu
 4. Write Tests
 
 5. Generate mutations
-
-Example: https://bitbucket.org/myint/mutpy/src
-
+Gem: https://github.com/mbj/mutant  
+To generate mutation use the command:  
+```mutant -I lib -r test_triangle '::Triangle' --rspec-dm2```
