@@ -44,4 +44,16 @@ end
             expect(triangle_equi.is_equilateral?).to be(true)
         end
     end
+
+    describe '#is_isosceles' do
+        subject(:triangle_scalene) {@triangle_scalene}
+        subject(:triangle_isosceles) {@triangle_isosceles}
+        subject(:triangle_equi) {@triangle_equi}
+
+        it 'should return true for triangle_equi, otherwhise false' do
+            expect(triangle_scalene.is_isosceles?).to be(false)
+            expect(triangle_isosceles.is_isosceles?).to be(true)
+            expect(triangle_equi.is_isosceles?).to be(true)
+        end
+    end
 end
