@@ -38,4 +38,15 @@ describe Triangle do
             expect(triangle_isosceles.type).to eq("Isosceles")
         end
     end
+
+    describe '#is_equilateral' do
+        subject(:triangle_scalene) {Triangle.new(VALID_PARTITION['scalene'][0])}
+        subject(:triangle_isosceles) {Triangle.new(VALID_PARTITION['isosceles'][0])}
+        subject(:triangle_equi) {Triangle.new(VALID_PARTITION['equilateral'][0])}
+        it 'should return true for triangle_equi, otherwhise false' do
+            expect(triangle_scalene.is_equilateral?).to be(false)
+            expect(triangle_isosceles.is_equilateral?).to be(false)
+            expect(triangle_equi.is_equilateral?).to be(true)
+        end
+    end
 end
