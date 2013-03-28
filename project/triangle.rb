@@ -25,7 +25,7 @@ class Triangle
             return "Equilateral"
 
         elsif self.is_isosceles?
-            return "Isocel"
+            return "Isosceles"
 
         elsif self.is_scalene?
             return "Scalene"
