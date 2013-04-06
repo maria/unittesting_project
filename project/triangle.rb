@@ -7,12 +7,12 @@ class Triangle
     end
 
     def is_triangle?
-        if @lat1 + @lat2 >= @lat3 ||
-           @lat1 + @lat3 >= @lat2 ||
-           @lat2 + @lat3 >= @lat1
-             return true
+        if @lat1 + @lat2 <= @lat3 ||
+           @lat1 + @lat3 <= @lat2 ||
+           @lat2 + @lat3 <= @lat1
+             return false
         end
-        return false
+        return true
     end
 
     def show
