@@ -27,3 +27,7 @@ Using [McCabe formula](http://en.wikipedia.org/wiki/Cyclomatic_complexity) compu
 More info about the gem: https://github.com/mbj/mutant  
 To generate mutation use the command:  
 ```mutant -I lib -r test_triangle '::Triangle' --rspec-dm2```
+
+#### Links ####
+1. http://www.site.uottawa.ca/~ssome/Cours/SEG3203/bboxtesting.pdf
+2. http://blog.txus.io/2012/02/mutation-testing-with-mutant/
