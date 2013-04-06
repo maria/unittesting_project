@@ -1,5 +1,5 @@
 require './triangle'
-require './test_data'
+require './data'
 
 describe Triangle do
 
