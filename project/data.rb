@@ -29,17 +29,16 @@ Test cases:
 =end
 
 VALID_PARTITION = {
-    'scalene' => [[1, 2, 3], [3, 7, 9]],
-    'isosceles' => [[1, 1, 2], [6, 6, 7]],
-    'equilateral' => [[11, 11, 11], [6, 6, 6]]}
+    'scalene' => [3, 7, 9],
+    'isosceles' => [6, 6, 7],
+    'equilateral' => [11, 11, 11]}
 
 INVALID_PARTITION = {
     'scalene' => [[0, 1, 2], [30, 15, 6]],
-    'isosceles' => [[21, 21, 2], [0, 0, 5], [1, 2, 3]],
-    'equilateral' => [[-2, -2, -2], [0, 0, 0], [21, 21, 21]] }
+    'isosceles' => [[21, 21, 2], [0, 0, 5]],
+    'equilateral' => [[0, 0, 0], [21, 21, 21]]}
     
-
 BOUNDARY_VALUES = {
-    'scalene' => [[1, 2, 3], [18, 19, 20],
+    'scalene' => [[1, 2, 3], [18, 19, 20]],
     'isosceles' => [[1, 1, 2], [19, 20, 20]],
     'equilateral' => [[1, 1, 1], [20, 20, 20]]}
