@@ -9,7 +9,10 @@ class Triangle
     def is_triangle?
         if @lat1 + @lat2 <= @lat3 ||
            @lat1 + @lat3 <= @lat2 ||
-           @lat2 + @lat3 <= @lat1
+           @lat2 + @lat3 <= @lat1 ||
+           @lat1 > 20 ||  @lat1 < 0 ||
+           @lat2 > 20 ||  @lat2 < 0 ||
+           @lat3 > 20 ||  @lat3 < 0 
              return false
         end
         return true
