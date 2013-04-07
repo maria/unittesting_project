@@ -5,12 +5,21 @@ describe Triangle do
 
 before(:each) do
     @invalid_scalene = Triangle.new(INVALID_PARTITION['scalene'][0])
+    @invalid_isosceles = Triangle.new(INVALID_PARTITION['isosceles'][0])
+    @invalid_equilateral = Triangle.new(INVALID_PARTITION['equilateral'][0])
+
     @valid_scalene = Triangle.new(VALID_PARTITION['scalene'])
     @valid_isosceles  = Triangle.new(VALID_PARTITION['isosceles'])
     @valid_equilateral = Triangle.new(VALID_PARTITION['equilateral'])
+
+    @boundary_scalene = Triangle.new(BOUNDARY_VALUES['scalene'][0])
+    @boundary_isosceles = Triangle.new(BOUNDARY_VALUES['isosceles'][0])
+    @boundary_equilateral = Triangle.new(BOUNDARY_VALUES['equilateral'][0])
 end
 
     describe '#is_triangle?' do
+    # Triangles with edges from Invalid partition should return False, others
+    # should return true.
 
       context "is a triangle" do
         subject(:triangle) {@valid_scalene}
