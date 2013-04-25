@@ -19,7 +19,7 @@ class Triangle
     end
 
     def show
-        if !is_triangle
+        if !self.is_triangle?
           return "Is not a triangle."
         end
 
@@ -27,7 +27,7 @@ class Triangle
     end
 
     def type
-        if !is_triangle
+        if !self.is_triangle?
           return "Is not a triangle"
         end
 
