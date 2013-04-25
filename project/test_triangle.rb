@@ -17,7 +17,7 @@ before(:each) do
     @boundary_equilateral = Triangle.new(BOUNDARY_VALUES['equilateral'][0])
 end
 
-    describe '#is_triangle?' do
+    describe '#is_triangle' do
     # Triangles with edges from Invalid partition should return False, others
     # should return true.
 
@@ -95,7 +95,7 @@ end
         end
     end
 
- describe '#perimeter' do
+    describe '#perimeter' do
         subject(:valid_scalene) {@valid_scalene}
         subject(:valid_isosceles) {@valid_isosceles}
         subject(:valid_equilateral) {@valid_equilateral}
@@ -104,6 +104,18 @@ end
             expect(valid_scalene.perimeter).to eq(19)
             expect(valid_isosceles.perimeter).to eq(19)
             expect(valid_equilateral.perimeter).to eq(33)
+        end
+    end
+
+    describe '#is_congruent_with' do
+        subject(:valid_scalene) {@valid_scalene}
+        subject(:valid_isosceles) {@valid_isosceles}
+        subject(:valid_equilateral) {@valid_equilateral}
+
+        it 'should return true if two triangles have the same type' do
+            expect(valid_scalene.is_congruent_with? valid_isosceles).to be(false)
+            expect(valid_isosceles.is_congruent_with? valid_equilateral).to be(false)
+            expect(valid_equilateral.is_congruent_with? valid_equilateral).to be(true)
         end
     end
 end
