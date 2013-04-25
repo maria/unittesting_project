@@ -95,4 +95,15 @@ end
         end
     end
 
+ describe '#perimeter' do
+        subject(:valid_scalene) {@valid_scalene}
+        subject(:valid_isosceles) {@valid_isosceles}
+        subject(:valid_equilateral) {@valid_equilateral}
+
+        it 'should return edges sum' do
+            expect(valid_scalene.perimeter).to eq(19)
+            expect(valid_isosceles.perimeter).to eq(19)
+            expect(valid_equilateral.perimeter).to eq(33)
+        end
+    end
 end
