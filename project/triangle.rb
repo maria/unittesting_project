@@ -21,12 +21,9 @@ class Triangle
     def show
         if is_triangle
           edges = "#{@lat1}, #{@lat2}, #{@lat3}"
-          puts edges
+          return edges
         end
-
-        else
-          puts "Is not a triangle."
-        end
+        return "Is not a triangle."
     end
 
     def type
@@ -66,7 +63,7 @@ class Triangle
         return false
     end
 
-    def perimetru
+    def perimeter
       return @lat1 + @lat2 + @lat3
     end
 
