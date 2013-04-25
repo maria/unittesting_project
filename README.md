@@ -18,7 +18,7 @@ The data is stored in ```data.rb```
 Using [McCabe formula](http://en.wikipedia.org/wiki/Cyclomatic_complexity) compute the program complexity.
 
 Formula: ```M = E - N + 2*P```  
-As the graph shows:  
+As the [graph](https://www.dropbox.com/s/es4461j38iz1r4i/graph.jpg) shows:  
 E = 11  
 N = 9  
 P = 3  
