@@ -24,14 +24,14 @@ end
       context "is a triangle" do
         subject(:triangle) {@valid_scalene}
           it 'should return true' do
-            expect(triangle.is_triangle?).to be(true) 
+            expect(triangle.is_triangle?).to be(true)
         end
-      end 
+      end
 
       context "is not a triangle" do
         subject(:triangle) {@invalid_scalene}
           it 'should return true' do
-            expect(triangle.is_triangle?).to be(false) 
+            expect(triangle.is_triangle?).to be(false)
         end
       end
 
@@ -82,4 +82,17 @@ end
             expect(valid_equilateral.is_isosceles?).to be(true)
         end
     end
+
+     describe '#is_scalene' do
+        subject(:valid_scalene) {@valid_scalene}
+        subject(:valid_isosceles) {@valid_isosceles}
+        subject(:valid_equilateral) {@valid_equilateral}
+
+        it 'should return true for scalene, otherwhise false' do
+            expect(valid_scalene.is_scalene?).to be(true)
+            expect(valid_isosceles.is_scalene?).to be(false)
+            expect(valid_equilateral.is_scalene?).to be(false)
+        end
+    end
+
 end
