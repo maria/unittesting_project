@@ -106,14 +106,28 @@ end
     end
 
     describe '#is_equilateral' do
-        subject(:valid_scalene) {@valid_scalene}
-        subject(:valid_isosceles) {@valid_isosceles}
-        subject(:valid_equilateral) {@valid_equilateral}
+        context "is a triangle" do
+            subject(:valid_scalene) {@valid_scalene}
+            subject(:valid_isosceles) {@valid_isosceles}
+            subject(:valid_equilateral) {@valid_equilateral}
 
-        it 'should return true for triangle_equi, otherwhise false' do
-            expect(valid_scalene.is_equilateral?).to be(false)
-            expect(valid_isosceles.is_equilateral?).to be(false)
-            expect(valid_equilateral.is_equilateral?).to be(true)
+            it 'should return true for triangle_equi, otherwhise false' do
+                expect(valid_scalene.is_equilateral?).to be(false)
+                expect(valid_isosceles.is_equilateral?).to be(false)
+                expect(valid_equilateral.is_equilateral?).to be(true)
+            end
+        end
+
+        context "is not a triangle" do
+            subject(:invalid_scalene) {@invalid_scalene}
+            subject(:invalid_isosceles) {@invalid_isosceles}
+            subject(:invalid_equilateral) {@invalid_equilateral}
+
+            it 'should retun false' do
+                expect(invalid_scalene.is_equilateral?).to eq(false)
+                expect(invalid_isosceles.is_equilateral?).to eq(false)
+                expect(invalid_equilateral.is_equilateral?).to eq(false)
+            end
         end
     end
 
