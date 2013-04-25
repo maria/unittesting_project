@@ -1,7 +1,2 @@
 # Graful clasei Triangle #
-
-
-            ## initialize ##
-            | |         | |
-             |           |
-### is_triangle ###    ### type ###
+[Graf](https://www.dropbox.com/s/sh3f0kmuefe7us4/graph.jpg)
