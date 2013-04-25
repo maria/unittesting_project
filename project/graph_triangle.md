@@ -1,2 +1,2 @@
 # Graful clasei Triangle #
-[Graf](https://www.dropbox.com/s/sh3f0kmuefe7us4/graph.jpg)
+[Graf](https://www.dropbox.com/s/es4461j38iz1r4i/graph.jpg)
