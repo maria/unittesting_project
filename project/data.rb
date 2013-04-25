@@ -3,7 +3,7 @@
 
   *Valid:
   a, b, c > 0 && a, b, c <= 20
-    
+
   *Invalid:
   a, b, c > 20, a, b, c <= 0
 
@@ -37,8 +37,8 @@ INVALID_PARTITION = {
     'scalene' => [[0, 1, 2], [30, 15, 6]],
     'isosceles' => [[21, 21, 2], [0, 0, 5]],
     'equilateral' => [[0, 0, 0], [21, 21, 21]]}
-    
+
 BOUNDARY_VALUES = {
-    'scalene' => [[1, 2, 3], [18, 19, 20]],
-    'isosceles' => [[1, 1, 2], [19, 20, 20]],
+    'scalene' => [[2, 3, 4], [18, 19, 20]],
+    'isosceles' => [[2, 2, 3], [19, 20, 20]],
     'equilateral' => [[1, 1, 1], [20, 20, 20]]}
