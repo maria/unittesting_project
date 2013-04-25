@@ -142,14 +142,38 @@ end
     end
 
     describe '#perimeter' do
-        subject(:valid_scalene) {@valid_scalene}
-        subject(:valid_isosceles) {@valid_isosceles}
-        subject(:valid_equilateral) {@valid_equilateral}
+        context "is a triangle" do
+            subject(:valid_scalene) {@valid_scalene}
+            subject(:valid_isosceles) {@valid_isosceles}
+            subject(:valid_equilateral) {@valid_equilateral}
 
-        it 'should return edges sum' do
-            expect(valid_scalene.perimeter).to eq(19)
-            expect(valid_isosceles.perimeter).to eq(19)
-            expect(valid_equilateral.perimeter).to eq(33)
+            it 'should return the sum of the edges' do
+                expect(valid_scalene.perimeter).to eq(19)
+                expect(valid_isosceles.perimeter).to eq(19)
+                expect(valid_equilateral.perimeter).to eq(33)
+            end
+
+            subject(:boundary_scalene) {@boundary_scalene}
+            subject(:boundary_isosceles) {@boundary_isosceles}
+            subject(:boundary_equilateral) {@boundary_equilateral}
+
+            it 'should return the sum of the edges' do
+                expect(boundary_scalene.perimeter).to eq(9)
+                expect(boundary_isosceles.perimeter).to eq(7)
+                expect(boundary_equilateral.perimeter).to eq(3)
+            end
+        end
+
+        context "is not a triangle" do
+            subject(:invalid_scalene) {@invalid_scalene}
+            subject(:invalid_isosceles) {@invalid_isosceles}
+            subject(:invalid_equilateral) {@invalid_equilateral}
+
+            it 'should return the sum of the edges' do
+                expect(invalid_scalene.perimeter).to eq(3)
+                expect(invalid_isosceles.perimeter).to eq(44)
+                expect(invalid_equilateral.perimeter).to eq(0)
+            end
         end
     end
 
