@@ -192,16 +192,26 @@ end
     end
 
     describe '#is_congruent_with' do
-        subject(:valid_scalene) {@valid_scalene}
-        subject(:valid_isosceles) {@valid_isosceles}
-        subject(:valid_equilateral) {@valid_equilateral}
 
-        it 'should return true if two triangles have the same type' do
-            expect(valid_scalene.is_congruent_with? valid_isosceles).to be(false)
-            expect(valid_isosceles.is_congruent_with? valid_equilateral).to be(false)
-            expect(valid_equilateral.is_congruent_with? valid_equilateral).to be(true)
+        context "compare two valid triangles" do
+            subject(:valid_scalene) {@valid_scalene}
+            subject(:valid_isosceles) {@valid_isosceles}
+            subject(:valid_equilateral) {@valid_equilateral}
+
+            it 'should return true if two triangles have the same type' do
+                expect(valid_scalene.is_congruent_with? valid_isosceles).to be(false)
+                expect(valid_isosceles.is_congruent_with? valid_equilateral).to be(false)
+                expect(valid_equilateral.is_congruent_with? valid_equilateral).to be(true)
+            end
+        end
+
+        context "compare a valid triangle with an invalid triangle" do
+            subject(:valid_scalene) {@valid_scalene}
+            subject(:invalid_scalene) {@invalid_isosceles}
+
+            it 'should return false' do
+                expect(invalid_scalene.is_congruent_with? valid_scalene).to be(false)
+            end
         end
     end
-
-
 end
