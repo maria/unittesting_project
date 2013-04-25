@@ -38,12 +38,33 @@ end
     end
 
     describe '#show' do
+        context "is a triangle" do
+            subject(:valid_scalene) {@valid_scalene}
+            subject(:valid_isosceles) {@valid_isosceles}
 
-        subject(:valid_scalene) {@valid_scalene}
-        subject(:valid_isosceles) {@valid_isosceles}
-        it 'should show edges' do
-            expect(valid_scalene.show).to eq('3, 7, 9')
-            expect(valid_isosceles.show).to eq('6, 6, 7')
+            it 'it should show edges' do
+                expect(valid_scalene.show).to eq('3, 7, 9')
+                expect(valid_isosceles.show).to eq('6, 6, 7')
+            end
+
+            subject(:boundary_scalene) {@boundary_scalene}
+            subject(:boundary_isosceles) {@boundary_isosceles}
+
+            it 'it should show edges' do
+                expect(boundary_scalene.show).to eq('2, 3, 4')
+                expect(boundary_isosceles.show).to eq('2, 2, 3')
+            end
+
+        end
+
+        context "is not a triangle" do
+            subject(:invalid_isosceles) {@invalid_isosceles}
+            subject(:invalid_scalene) {@invalid_scalene}
+
+            it 'it shouldn\'t show edges' do
+                expect(invalid_scalene.show).to eq("Is not a triangle.")
+                expect(invalid_isosceles.show).to eq("Is not a triangle.")
+            end
         end
     end
 
@@ -118,4 +139,6 @@ end
             expect(valid_equilateral.is_congruent_with? valid_equilateral).to be(true)
         end
     end
+
+
 end
