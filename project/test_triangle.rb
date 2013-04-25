@@ -69,15 +69,40 @@ end
     end
 
     describe '#type' do
-        subject(:valid_scalene) {@valid_scalene}
-        subject(:valid_isosceles) {@valid_isosceles}
-        subject(:valid_equilateral) {@valid_equilateral}
+        context "is a triangle" do
+            subject(:valid_scalene) {@valid_scalene}
+            subject(:valid_isosceles) {@valid_isosceles}
+            subject(:valid_equilateral) {@valid_equilateral}
 
-        it 'should return triangle type' do
-            expect(valid_scalene.type).to eq("Scalene")
-            expect(valid_isosceles.type).to eq("Isosceles")
-            expect(valid_equilateral.type).to eq("Equilateral")
+            it 'should return triangle type' do
+                expect(valid_scalene.type).to eq("Scalene")
+                expect(valid_isosceles.type).to eq("Isosceles")
+                expect(valid_equilateral.type).to eq("Equilateral")
+            end
+
+            subject(:boundary_scalene) {@boundary_scalene}
+            subject(:boundary_isosceles) {@boundary_isosceles}
+            subject(:boundary_equilateral) {@boundary_equilateral}
+
+            it 'should return triangle type' do
+                expect(boundary_scalene.type).to eq("Scalene")
+                expect(boundary_isosceles.type).to eq("Isosceles")
+                expect(boundary_equilateral.type).to eq("Equilateral")
+            end
         end
+
+        context "is not a triangle" do
+            subject(:invalid_scalene) {@invalid_scalene}
+            subject(:invalid_isosceles) {@invalid_isosceles}
+            subject(:invalid_equilateral) {@invalid_equilateral}
+
+            it 'should retun error message' do
+                expect(invalid_scalene.type).to eq("Is not a triangle")
+                expect(invalid_isosceles.type).to eq("Is not a triangle")
+                expect(invalid_equilateral.type).to eq("Is not a triangle")
+            end
+        end
+
     end
 
     describe '#is_equilateral' do
