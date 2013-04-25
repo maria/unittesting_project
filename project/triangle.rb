@@ -19,11 +19,11 @@ class Triangle
     end
 
     def show
-        if is_triangle
-          edges = "#{@lat1}, #{@lat2}, #{@lat3}"
-          return edges
+        if !is_triangle
+          return "Is not a triangle."
         end
-        return "Is not a triangle."
+
+        return "#{@lat1}, #{@lat2}, #{@lat3}"
     end
 
     def type
