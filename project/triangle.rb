@@ -12,18 +12,28 @@ class Triangle
            @lat2 + @lat3 <= @lat1 ||
            @lat1 > 20 ||  @lat1 < 0 ||
            @lat2 > 20 ||  @lat2 < 0 ||
-           @lat3 > 20 ||  @lat3 < 0 
+           @lat3 > 20 ||  @lat3 < 0
              return false
         end
         return true
     end
 
     def show
-        edges = "#{@lat1}, #{@lat2}, #{@lat3}"
-        return edges
+        if is_triangle
+          edges = "#{@lat1}, #{@lat2}, #{@lat3}"
+          puts edges
+        end
+
+        else
+          puts "Is not a triangle."
+        end
     end
 
     def type
+        if !is_triangle
+          return "Is not a triangle"
+        end
+
         if self.is_equilateral?
             return "Equilateral"
 
@@ -32,7 +42,6 @@ class Triangle
 
         elsif self.is_scalene?
             return "Scalene"
-
         end
     end
 
@@ -42,7 +51,7 @@ class Triangle
         end
         return false
     end
-    
+
     def is_isosceles?
         if @lat1 == @lat2 || @lat1 == @lat3 || @lat2 == @lat3
             return true
@@ -58,6 +67,7 @@ class Triangle
     end
 
     def perimetru
+      return @lat1 + @lat2 + @lat3
     end
 
     def is_congruent_with?(triangle)
@@ -72,7 +82,7 @@ class Triangle
 
          if triangle1 != triangle2
           return false
-        end
+         end
       return true
     end
 
