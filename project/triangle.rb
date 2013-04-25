@@ -43,21 +43,21 @@ class Triangle
     end
 
     def is_equilateral?
-        if @lat1 == @lat2 && @lat1 == @lat3
+        if self.is_triangle? && @lat1 == @lat2 && @lat1 == @lat3
             return true
         end
         return false
     end
 
     def is_isosceles?
-        if @lat1 == @lat2 || @lat1 == @lat3 || @lat2 == @lat3
+        if self.is_triangle? && @lat1 == @lat2 || @lat1 == @lat3 || @lat2 == @lat3
             return true
         end
         return false
     end
 
     def is_scalene?
-        if @lat1 != @lat2 && @lat1 != @lat3 && @lat2 != @lat3
+        if self.is_triangle? && @lat1 != @lat2 && @lat1 != @lat3 && @lat2 != @lat3
             return true
         end
         return false
