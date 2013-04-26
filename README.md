@@ -40,8 +40,10 @@ hence the **cyclomatic complexity** = 11 - 3 + 2 = 10
 * gem install mutant  
 
 More info about the gem: https://github.com/mbj/mutant  
+
 To generate mutation use the command:  
-```mutant -I lib -r test_triangle '::Triangle' --rspec-dm2```
+```$ rvm use rbx-head```
+```$ mutant -I lib -r test_triangle '::Triangle' --rspec-dm2```
 
 #### Links ####
 1. http://www.site.uottawa.ca/~ssome/Cours/SEG3203/bboxtesting.pdf
