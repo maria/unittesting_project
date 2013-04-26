@@ -1,5 +1,4 @@
-require './triangle'
-require './data'
+require 'spec_helper'
 
 describe Triangle do
 
@@ -15,6 +14,10 @@ before(:each) do
     @boundary_scalene = Triangle.new(BOUNDARY_VALUES['scalene'][0])
     @boundary_isosceles = Triangle.new(BOUNDARY_VALUES['isosceles'][0])
     @boundary_equilateral = Triangle.new(BOUNDARY_VALUES['equilateral'][0])
+
+    @second_boundary_scalene = Triangle.new(BOUNDARY_VALUES['scalene'][1])
+    @second_boundary_isosceles = Triangle.new(BOUNDARY_VALUES['isosceles'][1])
+    @second_boundary_equilateral = Triangle.new(BOUNDARY_VALUES['equilateral'][1])
 end
 
     describe '#is_triangle' do
@@ -24,6 +27,7 @@ end
       context "is a triangle" do
         subject(:triangle) {@valid_scalene}
           it 'should return true' do
+            expect(triangle.instance_of? Triangle).to be(true)
             expect(triangle.is_triangle?).to be(true)
         end
       end
@@ -31,6 +35,7 @@ end
       context "is not a triangle" do
         subject(:triangle) {@invalid_scalene}
           it 'should return true' do
+            expect(triangle.instance_of? Triangle).to be(false)
             expect(triangle.is_triangle?).to be(false)
         end
       end
@@ -209,10 +214,14 @@ end
             subject(:valid_isosceles) {@valid_isosceles}
             subject(:valid_equilateral) {@valid_equilateral}
 
+            subject(:second_boundary_scalene) {@second_boundary_scalene}
+            subject(:second_boundary_isosceles) {@second_boundary_isosceles}
+            subject(:second_boundary_equilateral) {@second_boundary_equilateral}
+
             it 'should return true if two triangles have the same type' do
-                expect(valid_scalene.is_congruent_with? valid_isosceles).to be(false)
-                expect(valid_isosceles.is_congruent_with? valid_equilateral).to be(false)
-                expect(valid_equilateral.is_congruent_with? valid_equilateral).to be(true)
+                expect(second_boundary_scalene.is_congruent_with? second_boundary_isosceles).to be(false)
+                expect(second_boundary_isosceles.is_congruent_with? second_boundary_equilateral).to be(false)
+                expect(second_boundary_equilateral.is_congruent_with? second_boundary_equilateral).to be(true)
             end
         end
 
