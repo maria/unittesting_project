@@ -48,3 +48,4 @@ To generate mutation use the command:
 #### Links ####
 1. http://www.site.uottawa.ca/~ssome/Cours/SEG3203/bboxtesting.pdf
 2. http://blog.txus.io/2012/02/mutation-testing-with-mutant/
+3. https://github.com/solnic/mutant-examples
