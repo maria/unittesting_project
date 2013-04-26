@@ -38,6 +38,8 @@ end
     end
 
     describe '#show' do
+    # Objects with edges from valid and boundary are triangles,
+    # so a string with the values of its edges will be returned.
         context "is a triangle" do
             subject(:valid_scalene) {@valid_scalene}
             subject(:valid_isosceles) {@valid_isosceles}
@@ -58,6 +60,8 @@ end
         end
 
         context "is not a triangle" do
+            # Objects with edges from invalid values are not of type Triangle,
+            # so an error message will be returned.
             subject(:invalid_isosceles) {@invalid_isosceles}
             subject(:invalid_scalene) {@invalid_scalene}
 
@@ -69,6 +73,9 @@ end
     end
 
     describe '#type' do
+        # Verify if an object is a triangle, if is then return his type.
+        # Two context are present: for valid and boundary values the triangles type
+        # should be returned, for invalid values an error message should be returned.
         context "is a triangle" do
             subject(:valid_scalene) {@valid_scalene}
             subject(:valid_isosceles) {@valid_isosceles}
@@ -105,6 +112,10 @@ end
 
     end
 
+=begin
+ The following method are used by 'type' method to verify a triangles
+ types, based on his edges.
+=end
     describe '#is_equilateral' do
         context "is a triangle" do
             subject(:valid_scalene) {@valid_scalene}
@@ -192,7 +203,7 @@ end
     end
 
     describe '#is_congruent_with' do
-
+        # Only the if we compare a triangle with himself it should return true.
         context "compare two valid triangles" do
             subject(:valid_scalene) {@valid_scalene}
             subject(:valid_isosceles) {@valid_isosceles}
